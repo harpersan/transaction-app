@@ -39,7 +39,7 @@ class TransactionNotification extends Notification
     {
         return (new MailMessage)
             ->line('A new transaction has been processed.')
-            ->line('Type: ' . $this->transaction->transaction_type)
+            ->line('Type: ' . $this->transaction->transactionType->name)
             ->line('Amount: $' . $this->transaction->amount)
             ->line('Balance After: $' . $this->transaction->balance_after)
             ->line('Thank you for using our application!');
